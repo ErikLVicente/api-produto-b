@@ -69,7 +69,8 @@ jobs:
 
       - name: Deploy WebApi
         uses: Azure/k8s-deploy@v1.3
-        with:    
+        with: 
+          images: erikdelimavicente/api-produto:${{github.run_number}}
           manifests: |
             k8s/api/deployment.yaml
             
